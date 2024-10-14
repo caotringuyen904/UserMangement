@@ -1,0 +1,261 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+}
+
+.container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  transform: translateY(30%); /* Center the form */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+}
+
+button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.container .open-button{
+  margin-left: 90%;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
+
+/* General form container */
+/* General form popup container with modal-like behavior */
+.form-popup {
+  position: fixed; /* Ensure it's fixed on the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the form */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Modal-like shadow */
+  border: 1px solid #ccc; /* Modal-like border */
+  max-width: 400px;
+  width: 100%;
+  z-index: 1000; /* Ensure it appears on top */
+  text-align: center;
+}
+
+/* Modal Overlay for form-popup */
+.form-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Place below the form but above the rest of the page */
+}
+
+/* Form heading */
+.form-popup h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input field styling */
+.form-popup input[type="text"],
+.form-popup input[type="email"],
+.form-popup input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 15px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.form-popup .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-popup .btn:hover {
+  background-color: #45a049;
+}
+
+/* Cancel button styling */
+.form-popup .btn.cancel {
+  background-color: #f44336;
+}
+
+.form-popup .btn.cancel:hover {
+  background-color: #e53935;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 600px) {
+  .form-popup {
+    width: 90%;
+  }
+}
+
+
+
+/* Modal Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal appears on top */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+  border: 1px solid #ccc; /* Border around the modal */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Modal Title */
+.modal-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Modal Message */
+.modal-content p {
+  font-size: 1rem;
+  margin: 20px 0;
+  color: #666;
+}
+
+/* Modal Actions (Buttons) */
+.modal-actions {
+  display: flex;
+  justify-content: space-around; /* Space between the buttons */
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Delete Button */
+.modal-actions button:first-child {
+  background-color: #e74c3c; /* Red for delete */
+  color: white;
+}
+
+.modal-actions button:first-child:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Cancel Button */
+.modal-actions button:last-child {
+  background-color: #bdc3c7; /* Gray for cancel */
+  color: white;
+}
+
+.modal-actions button:last-child:hover {
+  background-color: #95a5a6; /* Darker gray on hover */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Ensure it appears above other content */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
