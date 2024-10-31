@@ -10,10 +10,12 @@ const connectDatabase = require('./connectToDatabase')
 env.config()
 
 app.use(express.json())
-app.use(cors({
-    // All domains can access
-    origin: "*"
-}))
+// app.use(cors({
+//     // All domains can access
+//     origin: "*"
+// }))
+
+app.use(cors());
 
 
 app.use(morgan('combined'));
