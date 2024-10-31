@@ -7,10 +7,6 @@
       {
         "source": "/signup/:path*",
         "destination": "http://user-mangement-api.vercel.app/signup/:path*"
-      },
-      {
-        "source": "/userlist/:path*",
-        "destination": "http://user-mangement-api.vercel.app/userlist/:path*"
       }
     ]
   }
