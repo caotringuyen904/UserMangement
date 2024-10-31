@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Define base URL once
-const base_url = 'http://user-mangement-api.vercel.app'; // Adjust this if needed for production or development
+const base_url = 'https://user-mangement-api.vercel.app'; // Adjust this if needed for production or development
 
 export const signup = (data) => {
     console.log(data);
