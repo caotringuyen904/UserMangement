@@ -1,31 +1,33 @@
 import axios from 'axios';
 
+// Define base URL once
+const base_url = 'http://user-mangement-api.vercel.app'; // Adjust this if needed for production or development
+
 export const signup = (data) => {
-    console.log(data)
-    return axios.post('http://localhost:3001/signup', data);
+    console.log(data);
+    return axios.post(`${base_url}/signup`, data);
 };
 
 export const getUserAndPagination = (pageSize, pageIndex) => {
-    return axios.get(`http://localhost:3001/users-pagination?pageSize=${pageSize}&pageIndex=${pageIndex}`);
+    return axios.get(`${base_url}/users-pagination?pageSize=${pageSize}&pageIndex=${pageIndex}`);
 };
 
 export const getUserList = () => {
-    return axios.get('http://localhost:3001/userlist');
+    return axios.get(`${base_url}/userlist`);
 };
 
 export const deleteUser = (id) => {
     console.log(id);
-    return axios.delete(`http://localhost:3001/user/${id}`);
+    return axios.delete(`${base_url}/user/${id}`);
 };
-
 
 // Update exportCSV to use axios and GET method
 export const exportCSV = async (userIds) => {
-    console.log("userIds: ", userIds)
+    console.log("userIds: ", userIds);
 
     const userIdsParam = userIds.join(','); // Convert array of IDs to a comma-separated string
-    console.log("userIdsParam: ", userIdsParam)
-    const response = await axios.get(`http://localhost:3001/users?ids=${userIdsParam}`, {
+    console.log("userIdsParam: ", userIdsParam);
+    const response = await axios.get(`${base_url}/users?ids=${userIdsParam}`, {
         responseType: 'blob', // Important for handling binary data
     });
 
