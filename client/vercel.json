@@ -1,0 +1,13 @@
+{
+    "rewrites": [
+      {
+        "source": "/users-pagination/:path*",
+        "destination": "https://user-mangement-api.vercel.app/users-pagination/:path*"
+      },
+      {
+        "source": "/signup/:path*",
+        "destination": "https://user-mangement-api.vercel.app/signup/:path*"
+      }
+    ]
+  }
+  
